@@ -468,13 +468,6 @@ module OctocatalogDiff
       def cleanse_parameters_hash(parameters_hash, sensitive_parameters)
         result = parameters_hash.dup
 
-        # hides sensitive params. We still need to know if there's a going to
-        # be a diff, so we hash the value.
-        sensitive_parameters.each do |p|
-          md5 = Digest::MD5.hexdigest Marshal.dump(result[p])
-          result[p] = 'Sensitive [md5sum ' + md5 + ']'
-        end
-
         # 'before' and 'require' handle internal Puppet ordering but do not affect what
         # happens on the target machine. Don't consider these for the purpose of catalog diff.
         result.delete('before')
