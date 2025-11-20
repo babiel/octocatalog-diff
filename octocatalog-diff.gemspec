@@ -26,7 +26,7 @@ EOF
   s.add_runtime_dependency 'httparty', '>= 0.21.0'
   s.add_runtime_dependency 'hashdiff', '>= 0.3.0'
   s.add_runtime_dependency 'parallel', '>= 1.12.0'
-  s.add_runtime_dependency 'rugged', '>= 0.25.0b2'
+  s.add_runtime_dependency 'git', '~> 4'
   s.add_runtime_dependency 'puppet', '>= 7'
   s.add_development_dependency 'puppet', '>= 7'
   s.add_development_dependency 'rspec', '~> 3.4.0'
